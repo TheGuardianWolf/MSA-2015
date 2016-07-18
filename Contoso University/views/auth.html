@@ -1,0 +1,71 @@
+<div class="auth wrapper" ng-controller="authController">
+  <div class="auth-background bg-darker">
+    <div class="auth-strip bg-grayLighter">
+      <div class="logo">
+        <h1 class="">Contoso University</h1>
+      </div>
+
+      <div class="user-inputs">
+        <div class="auth-facebook">
+        </div>
+        <form ng-submit="login.submit()" ng-show="login.show" class="login">
+          <div class="input-control text">
+            <label>Username</label>
+            <span class="mif-user prepend-icon"></span>
+            <input ng-required type="text" name="Email" placeholder="Username (Email)"
+            ng-model="login.data.Email">
+          </div>
+          <div class="input-control password">
+            <label>Password</label>
+            <span class="mif-lock prepend-icon"></span>
+            <input ng-required type="password" name="Password" placeholder="Password"
+            ng-model="login.data.Password">
+          </div>
+          <input class="button primary bg-hover-cyan" type="submit" value="Login">
+        </form>
+
+        <form ng-submit="signup.submit()" ng-show="!login.show" class="signup">
+          <div class="input-control text">
+            <label>Username</label>
+            <span class="mif-user prepend-icon"></span>
+            <input ng-required type="text" name="Email" placeholder="Username (Email)"
+            ng-model="signup.data.Email">
+          </div>
+          <div class="input-control password">
+            <label>Password</label>
+            <span class="mif-lock prepend-icon"></span>
+            <input ng-required type="password" name="Password" placeholder="Password"
+            ng-model="signup.data.Password">
+          </div>
+          <div class="input-control password">
+            <label>Confirm Password</label>
+            <span class="mif-lock prepend-icon"></span>
+            <input ng-required type="password" name="ConfirmPassword" placeholder="Confirm password"
+            ng-model="signup.data.ConfirmPassword">
+          </div>
+          <div class="input-control text">
+            <label>First Name</label>
+            <input ng-required type="text" name="FirstName" placeholder="First Name"
+            ng-model="signup.data.FirstName">
+          </div>
+          <div class="input-control text">
+            <label>Last Name</label>
+            <input ng-required type="text" name="LastName" placeholder="Last Name"
+            ng-model="signup.data.LastName">
+          </div>
+          <input class="button primary bg-hover-cyan" type="submit" value="Signup">
+        </form>
+      </div>
+
+      <div class="auth-toggle">
+        <div class="btn-login padding10 bg(fg)-hover-cyan" ng-show="login.show">
+          Don't have an account? <a class="fg-hover-cyan" href="" ng-click="login.show = false">Sign up!</a>
+        </div>
+        <div class="btn-signup padding10" ng-show="!login.show">
+          Have an account? <a class="fg-hover-cyan" href="" ng-click="login.show = true">Log in!</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
